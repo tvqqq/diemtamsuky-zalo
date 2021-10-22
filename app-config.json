@@ -1,0 +1,17 @@
+{
+  "app": {
+    "title": "Điểm tâm Sú Ky",
+    "headerColor": "#1843EF",
+    "textColor": "white",
+    "statusBarColor": "#1843EF",
+    "leftButton": "back"
+  },
+  "debug": false,
+  "listCSS": [],
+  "listSyncJS": [],
+  "listAsyncJS": [],
+  "pages": [
+    "/404",
+    "/history"
+  ]
+}

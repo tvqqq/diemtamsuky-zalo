@@ -1,0 +1,36 @@
+.bottom-navigation {
+  position: fixed;
+  z-index: 10000;
+  .cart {
+    position: fixed;
+    bottom: 64px;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: var(--zmp-button-raised-box-shadow);
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;
+    .button {
+      padding: 24px 32px;
+    }
+  }
+  .tabbar {
+    position: fixed;
+    height: 60px;
+    bottom: 0;
+  }
+  .link {
+    padding: 10px;
+    font-size: 12px;
+    font-weight: normal;
+    &.active {
+      border-top: 2px solid var(--zmp-theme-color);
+      color: var(--zmp-theme-color);
+    }
+    &.inactive {
+      filter: grayscale(1);
+    }
+  }
+}
