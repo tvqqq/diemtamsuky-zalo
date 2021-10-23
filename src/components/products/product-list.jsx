@@ -5,12 +5,11 @@ import {
   Col,
   Box,
   SkeletonBlock,
-  SkeletonText,
   Text,
 } from "zmp-framework/react";
-import store from "../store";
+import store from "../../store";
 import Product from "./product";
-import "../css/product.scss";
+import "../../css/product.scss";
 
 const ProductList = () => {
   const loading = useStore("loadingProducts");
@@ -21,13 +20,11 @@ const ProductList = () => {
 
   return (
     <>
+      <Text bold fontSize={20} className="text-center">
+        - Menu Hôm Nay -
+      </Text>
       {loading ? (
         <Box m={0} px={4} pb={2}>
-          <SkeletonText effect="wave">
-            <Text fontSize={20} className="text-center">
-              Loading...
-            </Text>
-          </SkeletonText>
           <Row gap="gap_4" className="mt-4">
             <Col>
               <SkeletonBlock effect="wave" height="200px" />
@@ -39,9 +36,6 @@ const ProductList = () => {
         </Box>
       ) : (
         <>
-          <Text bold fontSize={20} className="text-center">
-            - Menu Hôm Nay -
-          </Text>
           <Row gap="gap_2">
             {products.map((product) => (
               <Col key={product._id} className="product" width="50">

@@ -8,7 +8,6 @@ import {
   ActionsLabel,
   Button,
   Icon,
-  Input,
   Row,
   Col,
   Box,
@@ -17,8 +16,8 @@ import {
   zmp,
 } from "zmp-framework/react";
 import { Price } from "./prices";
-import store from "../store";
-import "../css/product-order.scss";
+import store from "../../store";
+import "../../css/product-order.scss";
 
 const ProductOrder = ({ product, children, cartItem, cartIndex }) => {
   const { name, price, image, description } = product;

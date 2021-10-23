@@ -16,8 +16,8 @@ import {
 } from "zmp-framework/react";
 import { Price } from "./prices";
 import ProductOrder from "./product-order";
-import store from "../store";
-import "../css/checkout.scss";
+import store from "../../store";
+import "../../css/checkout.scss";
 
 const Checkout = ({ children, onReturn }) => {
   const cloudinaryUrl = useStore("cloudinaryUrl");

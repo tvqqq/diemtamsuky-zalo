@@ -1,13 +1,12 @@
 import React from "react";
-import { useStore, Page, Box, Card } from "zmp-framework/react";
-import Heading from "../components/heading";
-import ProductList from "../components/product-list";
+import { Page, Box, Card } from "zmp-framework/react";
+import Heading from "../components/products/heading";
+import ProductList from "../components/products/product-list";
 
 const HomePage = () => {
-  const user = useStore("user");
   return (
-    <Page name="home" navbarLarge>
-      <Heading user={user} />
+    <Page name="home">
+      <Heading />
 
       <Box mt={2}>
         <Card inset>

@@ -8,8 +8,8 @@ import {
   Text,
   Button,
 } from "zmp-framework/react";
-import { Price } from "./prices";
-import Checkout from "./checkout";
+import { Price } from "./products/prices";
+import Checkout from "./products/checkout";
 import "../css/bottom-navigation.scss";
 
 const BottomNavigation = () => {

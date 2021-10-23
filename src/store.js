@@ -104,6 +104,9 @@ const store = createStore({
     // Products
     async fetchProducts({ state }) {
       state.loadingProducts = true;
+      while (!state.jwt) {
+        await new Promise((resolve) => setTimeout(resolve, 100));
+      }
       const products = await getProducts();
       state.products = products.products;
       state.cloudinaryUrl = products.cloudinaryUrl;

@@ -1,7 +1,7 @@
 import React from "react";
-import { useStore, Text, Button, Card, zmp } from "zmp-framework/react";
-import { Price } from "./prices";
-import "../css/discount.scss";
+import { useStore, Text, Card } from "zmp-framework/react";
+import { Price } from "../products/prices";
+import "../../css/discount.scss";
 
 const PlacedOrder = ({ order }) => {
   const { cart, createdAt, total } = order;
