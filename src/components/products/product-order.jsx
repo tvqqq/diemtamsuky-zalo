@@ -152,7 +152,7 @@ const ProductOrder = ({ product, children, cartItem, cartIndex }) => {
           <ActionsLabel className="p-2 text-left">
             <Row>
               <Col>
-                <Box>Tổng tiền</Box>
+                <Box>Tổng cộng</Box>
               </Col>
               <Col className="text-right">
                 <Box>

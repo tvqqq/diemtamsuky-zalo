@@ -91,7 +91,7 @@ const Checkout = ({ children, onReturn }) => {
               </ListItem>
               <ListItem className="editable-info">
                 <Box slot="root-start" className="label d-flex v-center">
-                  <Icon zmp="zi-notif-ring" size="20" />
+                  <Icon zmp="zi-call" size="20" />
                   <strong>Số điện thoại</strong>
                 </Box>
                 <div className="inline-input">
@@ -195,7 +195,7 @@ const Checkout = ({ children, onReturn }) => {
                   </Text>
                 </Box>
                 <Box className="d-flex v-center space-between">
-                  <Text>Tạm tính</Text>
+                  <Text>Tổng cộng (tạm tính)</Text>
                   <Price fontSize={20} bold amount={totalAmount} />
                 </Box>
                 <Box>

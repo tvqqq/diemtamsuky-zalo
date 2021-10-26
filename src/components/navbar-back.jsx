@@ -12,7 +12,7 @@ const NavbarBack = ({ title, linkRight, labelRight }) => {
   return (
     <Navbar>
       <NavLeft displayName="zmp-navleft">
-        <Link className="no-ripple" noLinkClass back>
+        <Link className="no-ripple" href="/history" noLinkClass>
           <Icon zmp="zi-arrow-left" />
         </Link>
       </NavLeft>

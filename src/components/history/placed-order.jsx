@@ -1,28 +1,36 @@
 import React from "react";
-import { useStore, Text, Card } from "zmp-framework/react";
+import { useStore, Text, Card, Link } from "zmp-framework/react";
 import { Price } from "../products/prices";
-import "../../css/discount.scss";
+import "../../css/order.scss";
 
 const PlacedOrder = ({ order }) => {
-  const { cart, createdAt, total } = order;
-  const cloudinaryUrl = useStore("cloudinaryUrl");
+  const { _id, cart, createdAt, total } = order;
 
   return (
-    <Card className="discount-card" inset>
-      <img
-        className="discount-image"
-        src={cloudinaryUrl + cart[0].product.image}
-      />
-      <div className="discount-summary">
-        <Text className="text-secondary">
-          {new Date(createdAt).toLocaleDateString()} -{" "}
-          {new Date(createdAt).toLocaleTimeString()}
-        </Text>
-        <div className="d-flex">
+    <Link
+      href={`/order-detail?id=${_id}`}
+      animate={false}
+      ignoreCache={true}
+      className="order-link"
+    >
+      <Card className="order-card" inset>
+        <div className="order-summary">
+          <strong>
+            {cart[0].product.name} {cart[1] ? "++" : ""}
+          </strong>
+          <Text className="text-secondary">
+            {new Date(createdAt).toLocaleTimeString("vi-VN", {
+              hour: "2-digit",
+              minute: "2-digit",
+            })}{" "}
+            - {new Date(createdAt).toLocaleDateString("vi-VN")}
+          </Text>
+        </div>
+        <div className="">
           <Price bold amount={total} />
         </div>
-      </div>
-    </Card>
+      </Card>
+    </Link>
   );
 };
 

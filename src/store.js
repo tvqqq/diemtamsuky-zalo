@@ -8,6 +8,8 @@ import {
   checkout,
   getHistory,
 } from "./api/api";
+import error from "./static/icons/error.png";
+import success from "./static/icons/success.png";
 
 const store = createStore({
   state: {
@@ -155,6 +157,7 @@ const store = createStore({
       if (errorText !== "") {
         zmp.toast
           .create({
+            icon: `<img src="${error}" />`,
             text: errorText,
             closeTimeout: 3000,
             position: "center",
@@ -177,6 +180,7 @@ const store = createStore({
         // Success
         zmp.toast
           .create({
+            icon: `<img src="${success}" />`,
             text: result.message,
             closeTimeout: 3000,
             position: "center",

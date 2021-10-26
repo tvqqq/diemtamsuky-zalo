@@ -1,0 +1,22 @@
+.order-detail {
+  padding: 0;
+  margin: 10px 0 !important;
+
+  .text-heading {
+    font-size: 120%;
+    margin-top: 20px;
+    margin-bottom: -10px;
+  }
+
+  .list {
+    .item-content,
+    .item-inner {
+      padding: 0;
+    }
+
+    .location-content {
+      flex: 1;
+      text-align: right;
+    }
+  }
+}

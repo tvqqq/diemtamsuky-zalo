@@ -12,6 +12,8 @@
   "listAsyncJS": [],
   "pages": [
     "/404",
-    "/history"
+    "/history",
+    "/order-detail",
+    "/dynamic-route"
   ]
 }
