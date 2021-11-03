@@ -8,8 +8,8 @@ import {
   checkout,
   getHistory,
 } from "./api/api";
-import error from "./static/icons/error.png";
-import success from "./static/icons/success.png";
+import error from "./static/icons/x-circle.svg";
+import success from "./static/icons/check-circle.svg";
 
 const store = createStore({
   state: {
