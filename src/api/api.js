@@ -18,12 +18,14 @@ export const request = async (method, url, data) => {
 };
 
 export const login = async (accessToken) => {
+  console.log("accessToken", accessToken);
   try {
     const response = await (
       await request("POST", "api/login", {
         accessToken,
       })
     ).json();
+    console.log("response", response);
     if (response.data.jwt) {
       store.dispatch("setJwt", response.data.jwt);
       return true;

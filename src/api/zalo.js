@@ -1,22 +1,35 @@
 import { zmp } from "zmp-framework/react";
-import api from "zmp-sdk";
+import apis from "zmp-sdk";
 import config from "../config";
 import store from "../store";
+import { generateChallenge } from "pkce-challenge";
 
 export const getAccessToken = () =>
   new Promise((resolve) => {
-    api.login({
-      success: () => {
-        api.getAccessToken({
-          success: (token) => {
-            if (
-              token === "DEFAULT ACCESS TOKEN" &&
-              config.DEFAULT_ACCESS_TOKEN
-            ) {
-              // eslint-disable-next-line no-param-reassign
-              token = config.DEFAULT_ACCESS_TOKEN; // For testing purpose only
-            }
-            resolve(token);
+    apis.getAuthCode({
+      // FIXME: waiting zmp-sdk update loginZaloV4 documentation
+      success: (getAuthCode) => {
+        // getAuthCode.authCodeVerify = "123";
+        getAuthCode.authCodeVerify = generateChallenge(getAuthCode.authCode);
+        console.log("getAuthCode", getAuthCode);
+        apis.login({
+          success: (loginData) => {
+            console.log("loginData", loginData);
+            // apis.getAccessToken({
+            //   success: (token) => {
+            //     if (
+            //       token === "DEFAULT ACCESS TOKEN" &&
+            //       config.DEFAULT_ACCESS_TOKEN
+            //     ) {
+            //       // eslint-disable-next-line no-param-reassign
+            //       token = config.DEFAULT_ACCESS_TOKEN; // For testing purpose only
+            //     }
+            //     resolve(token);
+            //   },
+            //   fail: (error) => {
+            //     console.error(error);
+            //   },
+            // });
           },
           fail: (error) => {
             console.error(error);
@@ -30,7 +43,7 @@ export const getAccessToken = () =>
   });
 
 export const follow = () => {
-  api.followOA({
+  apis.followOA({
     id: config.OA_ID,
     success: () => {
       store.dispatch("setUser", {
